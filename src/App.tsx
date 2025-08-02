@@ -27,7 +27,7 @@ const App: React.FC = () => {
           "https://fakestoreapi.com/products"
         );
         setProducts(response.data);
-        console.log(response.data);
+        // console.log(response.data);
       } catch (error) {
         console.error("The error is ", error);
         setIsError(true);
