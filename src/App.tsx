@@ -17,30 +17,30 @@ const App: React.FC = () => {
 
 
   // Fetch products from the API
-  // useEffect(() => {
-  //   const fetchProducts = async () => {
-  //     setIsLoading(true);
-  //     setIsError(false);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setIsLoading(true);
+      setIsError(false);
 
-  //     try {
-  //       const response = await axios.get<Product[]>(
-  //         "https://fakestoreapi.com/products"
-  //       );
-  //       setProducts(response.data);
-  //       console.log(response.data);
-  //     } catch (error) {
-  //       console.error("The error is ", error);
-  //       setIsError(true);
-  //     } finally {
-  //       setIsLoading(false);
-  //     }
-  //   };
+      try {
+        const response = await axios.get<Product[]>(
+          "https://fakestoreapi.com/products"
+        );
+        setProducts(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error("The error is ", error);
+        setIsError(true);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-  //   fetchProducts();
-  // }, []); // Re-fetch products when searchFilter changes
+    fetchProducts();
+  }, []); // Re-fetch products when searchFilter changes
 
-  // if (isLoading) return <LoadingAnimation />;
-  // if (isError) return <p>Something went wrong while fetching products.</p>;
+  if (isLoading) return <LoadingAnimation />;
+  if (isError) return <p>Something went wrong while fetching products.</p>;
   return (
     <>
       <Navbar searchFilter={searchFilter} setSearchFilter={setSearchFilter} />
