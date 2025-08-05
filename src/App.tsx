@@ -1,14 +1,19 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import type { Product } from "./interfaces";
+import type { ApiResponse } from "./interfaces";
 import LoadingAnimation from "./components/LoadingAnimation";
 
 import ProductCatalogPage from "./pages/ProductCatalogPage";
 import Navbar from "./components/Navbar";
 
 const App: React.FC = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<ApiResponse>({
+    products: [],
+    total: 0,
+    skip: 0,
+    limit: 0,
+  });
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -23,10 +28,10 @@ const App: React.FC = () => {
       setIsError(false);
 
       try {
-        const response = await axios.get<Product[]>(
-          "https://fakestoreapi.com/products"
+        const response = await axios.get<ApiResponse>(
+          "https://dummyjson.com/products?limit=194"
         );
-        setProducts(response.data);
+        setProducts({ products: response.data.products, total: response.data.total, skip: response.data.skip, limit: response.data.limit });
         // console.log(response.data);
       } catch (error) {
         console.error("The error is ", error);
@@ -44,7 +49,7 @@ const App: React.FC = () => {
   return (
     <>
       <Navbar searchFilter={searchFilter} setSearchFilter={setSearchFilter} />
-      <ProductCatalogPage searchFilter={searchFilter} products={products} />
+      <ProductCatalogPage searchFilter={searchFilter} products={products.products} />
     </>
   );
 };

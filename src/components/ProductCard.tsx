@@ -1,7 +1,7 @@
 import { ShoppingCart } from "lucide-react";
 import type { Product } from "../interfaces";
 
-const ProductCard: React.FC<Product> = ({ title, category, image, price }) => {
+const ProductCard: React.FC<Product> = ({ title, category, images: [image], price }) => {
   return (
     <div className="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
       <div className="relative h-48 overflow-hidden">
