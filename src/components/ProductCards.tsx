@@ -13,7 +13,7 @@ const ProductCards: React.FC<FilterProductProps> = ({
   const [prevPage, setPrevPage] = useState<boolean>(false);
   const [nextPage, setNextPage] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
-
+  console.log("Prev page clicked", prevPage, "Next Pageclicked", nextPage, "Current page",currentPage);
   const filteredProducts = products.filter((product) => {
     const matchesSearch = searchFilter
       ? product.title.toLowerCase().includes(searchFilter.toLowerCase())
