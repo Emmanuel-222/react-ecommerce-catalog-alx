@@ -14,8 +14,8 @@ const FilterProduct: React.FC<{
   };
 
   return (
-    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-      <div className="w-full md:w-auto">
+    <div className="flex flex-col justify-between items-start mb-8 gap-4">
+      <div className="w-full">
         <div className="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-hide">
           <button
             onClick={(event) => handleFilterChange(event.currentTarget.value)}
@@ -30,51 +30,161 @@ const FilterProduct: React.FC<{
           </button>
           <button
             onClick={(event) => handleFilterChange(event.currentTarget.value)}
-            value={"Electronics"}
+            value={"Beauty"}
             className={`${
-              clickedCategory === "Electronics"
+              clickedCategory === "Beauty"
                 ? "bg-indigo-600 text-white"
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
             } px-4 py-2 rounded-full whitespace-nowrap`}
           >
-            Electronics
+            Beauty
           </button>
           <button
             onClick={(event) => handleFilterChange(event.currentTarget.value)}
-            value={"Footwear"}
+            value={"Fragrances"}
             className={`${
-              clickedCategory === "Footwear"
+              clickedCategory === "Fragrances"
                 ? "bg-indigo-600 text-white"
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
             } px-4 py-2 rounded-full whitespace-nowrap`}
           >
-            Footwear
+            Fragrances
           </button>
           <button
             onClick={(event) => handleFilterChange(event.currentTarget.value)}
-            value={"Clothing"}
+            value={"Furniture"}
             className={`${
-              clickedCategory === "Clothing"
+              clickedCategory === "Furniture"
                 ? "bg-indigo-600 text-white"
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
             } px-4 py-2 rounded-full whitespace-nowrap`}
           >
-            Clothing
+            Furniture
           </button>
           <button
             onClick={(event) => handleFilterChange(event.currentTarget.value)}
-            value={"Jewelery"}
+            value={"Groceries"}
             className={`${
-              clickedCategory === "Jewelery"
+              clickedCategory === "Groceries"
                 ? "bg-indigo-600 text-white"
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
             } px-4 py-2 rounded-full whitespace-nowrap`}
           >
-            Jewelery
+            Groceries
+          </button>
+          <button
+            onClick={(event) => handleFilterChange(event.currentTarget.value)}
+            value={"Home-decoration"}
+            className={`${
+              clickedCategory === "Home-decoration"
+                ? "bg-indigo-600 text-white"
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+            } px-4 py-2 rounded-full whitespace-nowrap`}
+          >
+            Home-decoration
+          </button>
+          <button
+            onClick={(event) => handleFilterChange(event.currentTarget.value)}
+            value={"Kitchen-Accessories"}
+            className={`${
+              clickedCategory === "Kitchen-Accessories"
+                ? "bg-indigo-600 text-white"
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+            } px-4 py-2 rounded-full whitespace-nowrap`}
+          >
+            Kitchen-Accessories
+          </button>
+          <button
+            onClick={(event) => handleFilterChange(event.currentTarget.value)}
+            value={"Laptops"}
+            className={`${
+              clickedCategory === "Laptops"
+                ? "bg-indigo-600 text-white"
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+            } px-4 py-2 rounded-full whitespace-nowrap`}
+          >
+            Laptops
+          </button>
+          <button
+            onClick={(event) => handleFilterChange(event.currentTarget.value)}
+            value={"Mens-shirts"}
+            className={`${
+              clickedCategory === "Mens-shirts"
+                ? "bg-indigo-600 text-white"
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+            } px-4 py-2 rounded-full whitespace-nowrap`}
+          >
+            Mens-Shirts
+          </button>
+          <button
+            onClick={(event) => handleFilterChange(event.currentTarget.value)}
+            value={"Mens-shoes"}
+            className={`${
+              clickedCategory === "Mens-shoes"
+                ? "bg-indigo-600 text-white"
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+            } px-4 py-2 rounded-full whitespace-nowrap`}
+          >
+            Mens-Shoes
+          </button>
+          <button
+            onClick={(event) => handleFilterChange(event.currentTarget.value)}
+            value={"Mobile-Accessories"}
+            className={`${
+              clickedCategory === "Mobile-Accessories"
+                ? "bg-indigo-600 text-white"
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+            } px-4 py-2 rounded-full whitespace-nowrap`}
+          >
+            Mobile-Accessories
+          </button>
+          <button
+            onClick={(event) => handleFilterChange(event.currentTarget.value)}
+            value={"Smartphones"}
+            className={`${
+              clickedCategory === "Smartphones"
+                ? "bg-indigo-600 text-white"
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+            } px-4 py-2 rounded-full whitespace-nowrap`}
+          >
+            Smartphones
+          </button>
+          <button
+            onClick={(event) => handleFilterChange(event.currentTarget.value)}
+            value={"Womens-dresses"}
+            className={`${
+              clickedCategory === "Womens-dresses"
+                ? "bg-indigo-600 text-white"
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+            } px-4 py-2 rounded-full whitespace-nowrap`}
+          >
+            Womens-dresses
+          </button>
+          <button
+            onClick={(event) => handleFilterChange(event.currentTarget.value)}
+            value={"Womens-jewellery"}
+            className={`${
+              clickedCategory === "Womens-jewellery"
+                ? "bg-indigo-600 text-white"
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+            } px-4 py-2 rounded-full whitespace-nowrap`}
+          >
+            Womens-jewellery
+          </button>
+          <button
+            onClick={(event) => handleFilterChange(event.currentTarget.value)}
+            value={"Womens-Shoes"}
+            className={`${
+              clickedCategory === "Womens-Shoes"
+                ? "bg-indigo-600 text-white"
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+            } px-4 py-2 rounded-full whitespace-nowrap`}
+          >
+            Womens-Shoes
           </button>
         </div>
       </div>
-      <div className="w-full md:w-auto">
+      <div className="w-full">
         <div className="relative">
           <select
             onChange={(e) => handleSortChange(e.currentTarget.value)}
