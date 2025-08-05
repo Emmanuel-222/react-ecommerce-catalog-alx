@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import type { ApiResponse } from "./interfaces";
-import LoadingAnimation from "./components/LoadingAnimation";
+import {ReloadAnimation} from "./components/LoadingAnimation";
 
 import ProductCatalogPage from "./pages/ProductCatalogPage";
 import Navbar from "./components/Navbar";
@@ -44,7 +44,7 @@ const App: React.FC = () => {
     fetchProducts();
   }, []); // Re-fetch products when searchFilter changes
 
-  if (isLoading) return <LoadingAnimation />;
+  if (isLoading) return <ReloadAnimation />;
   if (isError) return <p>Something went wrong while fetching products.</p>;
   return (
     <>
