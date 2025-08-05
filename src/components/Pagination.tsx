@@ -10,6 +10,7 @@ const Pagination: React.FC<PaginationProps> = ({
   filteredProducts,
   itemsPerPage = 10, // Default to 10 items per page if not provided
 }) => {
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
   const handlePrevPage = () => {
     if (currentPage <= 1) {
       console.log("Already on the first page");
@@ -21,8 +22,7 @@ const Pagination: React.FC<PaginationProps> = ({
   };
 
   const handleNextPage = () => {
-    if (currentPage >= filteredProducts?.length / itemsPerPage) {
-      // Assuming 10 is the last page
+    if (currentPage >= totalPages) {
       console.log("Already on the last page");
       return;
     }
@@ -39,9 +39,22 @@ const Pagination: React.FC<PaginationProps> = ({
         >
           <ArrowLeft className="" />
         </button>
-        <button className="px-3 py-1 rounded-md border border-gray-300 bg-indigo-600 text-white">
+        {Array.from({ length: totalPages }, (_, i) => (
+          <button
+            key={i + 1}
+            onClick={() => setCurrentPage(i + 1)}
+            className={`px-3 py-1 rounded-md border border-gray-300 ${
+              currentPage === i + 1
+                ? "bg-indigo-600 text-white"
+                : "hover:bg-gray-100"
+            }`}
+          >
+            {i + 1}
+          </button>
+        ))}
+        {/* <button className="px-3 py-1 rounded-md border border-gray-300 bg-indigo-600 text-white">
           {currentPage}
-        </button>
+        </button> */}
         {/* <button className="px-3 py-1 rounded-md border border-gray-300">
           2
         </button> */}
