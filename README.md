@@ -1,69 +1,74 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite — eCommerce Catalog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a **React + TypeScript** template powered by **Vite**, built for creating a responsive e‑commerce catalog app. It offers a robust foundation with fast refresh, TypeScript linting, and a clean dev setup.
 
-Currently, two official plugins are available:
+##  Live Demo  
+[Explore the live version](https://react-ecommerce-catalog-alx.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+##  Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React UI with Vite for blazing-fast builds and HMR  
+- Complete TypeScript support for safe and scalable code  
+- ESLint configuration, including sample suggestions for stricter linting  
+- Easy integration with Vite plugins like `@vitejs/plugin-react` or `@vitejs/plugin-react-swc`
 
-```js
+---
+
+##  Getting Started
+
+### Prerequisites
+
+- Node.js (v14+) and npm (v7+), or Yarn
+
+### Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/Emmanuel-222/react-ecommerce-catalog-alx.git
+cd react-ecommerce-catalog-alx
+
+# Install dependencies
+npm install
+# or
+yarn install
+# Run server
+npm run dev
+# or
+yarn dev
+# Build for production
+npm run build
+# or
+yarn build
+```
+### Project Structure
+├── public/              # Static assets (images, favicon, etc.)
+└── src/                 # Source files
+    ├── App.tsx          # Main app component
+    ├── index.html       # Entry HTML
+    ├── tsconfig.app.json
+    ├── tsconfig.json
+    ├── tsconfig.node.json
+    └── vite.config.ts   # Vite configuration
+
+### ESLint Suggestions
 export default tseslint.config([
   globalIgnores(['dist']),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
       ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
+      // Or for stricter enforcement:
+      // ...tseslint.configs.strictTypeChecked,
+      // And optionally stylistic rules:
+      // ...tseslint.configs.stylisticTypeChecked,
     ],
     languageOptions: {
       parserOptions: {
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
       },
-      // other options...
     },
   },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+]);
