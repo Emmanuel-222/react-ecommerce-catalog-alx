@@ -12,11 +12,11 @@ const ProductCard: React.FC<Product> = ({ title, category, images: [image], pric
         />
       </div>
       <div className="p-4">
-        <h3 className="text-lg font-semibold text-gray-800 mb-1 truncate">
+        <h3 className="text-lg font-semibold text-gray-800 mb-1 truncate font-poppins">
           {title}
         </h3>
-        <p className="text-sm text-gray-500 mb-2">{category}</p>
-        <div className="flex justify-between items-center">
+        <p className="text-sm text-gray-500 mb-2 font-nunito">{category}</p>
+        <div className="flex justify-between items-center font-nunito">
           <span className="text-lg font-bold text-indigo-600">${price}</span>
           <button className="bg-indigo-600 font-medium text-white px-3 py-1 rounded-md hover:bg-indigo-700 transition-colors flex cursor-pointer">
             <ShoppingCart className="mr-1" />

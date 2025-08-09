@@ -13,21 +13,17 @@ const Pagination: React.FC<PaginationProps> = ({
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
   const handlePrevPage = () => {
     if (currentPage <= 1) {
-      console.log("Already on the first page");
       return;
     }
     setCurrentPage(currentPage - 1);
-    console.log("Previous page clicked");
     setPrevPage(true);
   };
 
   const handleNextPage = () => {
     if (currentPage >= totalPages) {
-      console.log("Already on the last page");
       return;
     }
     setCurrentPage(currentPage + 1);
-    console.log("Next page clicked");
     setNextPage(true);
   };
   return (
@@ -38,7 +34,7 @@ const Pagination: React.FC<PaginationProps> = ({
           disabled={currentPage <= 1}
           className="px-3 py-1 rounded-md border border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100"
         >
-          <ArrowLeft className="" />
+          <ArrowLeft />
         </button>
         {Array.from({ length: totalPages }, (_, i) => (
           <button
@@ -58,7 +54,7 @@ const Pagination: React.FC<PaginationProps> = ({
           disabled={currentPage >= totalPages}
           className="px-3 py-1 rounded-md border border-gray-300 hover:bg-gray-100  disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <ArrowRight className="" />
+          <ArrowRight />
         </button>
       </div>
     </div>
