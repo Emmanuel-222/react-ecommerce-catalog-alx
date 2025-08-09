@@ -3,7 +3,7 @@ import type { NavbarProps } from "../interfaces";
 
 const Navbar: React.FC<NavbarProps> = ({ setSearchFilter }) => {
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white shadow-md font-poppins">
       <header className="flex flex-wrap md:flex-nowrap items-center justify-between p-4 gap-4">
         <h1 className="text-2xl text-indigo-600 font-bold">ShopEase</h1>
         <label className="relative w-full md:w-96" htmlFor="search">

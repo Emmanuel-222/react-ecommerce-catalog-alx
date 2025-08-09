@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
+import { ChevronUp } from "lucide-react";
+import InfiniteScroll from "react-infinite-scroll-component";
+
+
 import type { FilterProductProps } from "../interfaces";
 import ProductCard from "./ProductCard";
 import Pagination from "./Pagination";
-import InfiniteScroll from "react-infinite-scroll-component";
 import { LoadingAnimation } from "./LoadingAnimation";
 
 const ProductCards: React.FC<FilterProductProps> = ({
@@ -14,6 +17,7 @@ const ProductCards: React.FC<FilterProductProps> = ({
   const [prevPage, setPrevPage] = useState(false);
   const [nextPage, setNextPage] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  // Pagination state
   console.log("Prev button clicked:", prevPage);
   console.log("Next button clicked:", nextPage);
 
@@ -83,11 +87,19 @@ const ProductCards: React.FC<FilterProductProps> = ({
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentPage]);
 
+  // Scroll to top when page changes in infinite scroll mode
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // smooth scroll
+    });
+  };
+
   return (
     <main className="container mx-auto p-4">
       {shouldPaginate ? (
         <>
-        <span className="text-gray-600">Showing 3 of 5 produts</span>
+          <span className="text-gray-600">Showing 3 of 5 produts</span>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {paginatedProducts.map((product) => (
               <ProductCard key={product.id} {...product} />
@@ -114,7 +126,13 @@ const ProductCards: React.FC<FilterProductProps> = ({
             </p>
           }
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div
+              onClick={scrollToTop}
+              className="fixed bottom-6 right-6 bg-indigo-500 text-white p-3 rounded-full shadow-lg hover:bg-indigo-600 transition-all duration-300"
+            >
+              <ChevronUp className="w-6 h-6" onClick={scrollToTop} />
+            </div>
             {infiniteScrollProducts.map((product) => (
               <ProductCard key={product.id} {...product} />
             ))}

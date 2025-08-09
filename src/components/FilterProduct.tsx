@@ -14,7 +14,7 @@ const FilterProduct: React.FC<{
   };
 
   return (
-    <div className="flex flex-col justify-between items-start mb-8 gap-4">
+    <div className="flex flex-col justify-between items-start mb-8 gap-4 font-poppins">
       <div className="w-full">
         <div className="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-hide">
           <button
